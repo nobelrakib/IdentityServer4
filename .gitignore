@@ -5,3 +5,5 @@
 /.vs
 /Movies.Api/bin/Debug/net5.0
 /Movies.Api/obj
+/IdentityServer/bin/Debug/net5.0
+/IdentityServer/obj
