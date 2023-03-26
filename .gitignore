@@ -7,3 +7,5 @@
 /Movies.Api/obj
 /IdentityServer/bin/Debug/net5.0
 /IdentityServer/obj
+/Movies.Client/bin/Debug/net5.0
+/Movies.Client/obj
