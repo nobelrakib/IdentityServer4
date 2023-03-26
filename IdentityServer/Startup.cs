@@ -23,10 +23,12 @@ namespace IdentityServer
             services.AddIdentityServer()
                 .AddInMemoryClients(Config.Clients)
                 .AddInMemoryApiScopes(Config.ApiScopes)
+                .AddInMemoryIdentityResources(Config.IdentityResources)
+                .AddTestUsers(Config.TestUsers)
                 .AddDeveloperSigningCredential();
 
 
-            
+            services.AddControllersWithViews();
 
 
         }
@@ -39,13 +41,17 @@ namespace IdentityServer
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseIdentityServer();
+
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                app.UseEndpoints(endpoints =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    endpoints.MapDefaultControllerRoute();
                 });
             });
         }
