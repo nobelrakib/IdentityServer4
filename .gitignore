@@ -9,3 +9,5 @@
 /IdentityServer/obj
 /Movies.Client/bin/Debug/net5.0
 /Movies.Client/obj
+/ApiGateway/bin/Debug/net5.0
+/ApiGateway/obj
